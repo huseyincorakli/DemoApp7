@@ -11,11 +11,18 @@ import { Component } from '@angular/core';
   <p>Her bir route, routes dizisinde yukarıdaki gibi tanımlanır. </p>
   <p>Route parametrelerini okumak için ActivatedRoute nesnesini inject ederek elde edebiliriz</p>
   <hr>
+  <h1>Angular Routing II</h1>
+  QueryParamsHandler directive ile bir routedan diğerine giderken queryleri taşıya biliriz: preserve de gidilen routtadki queryler ezilip geldiğimiz routtaki <br>
+  queryler yerleştirelecektir, merge de ise her iki routedaki queryler birleştirilecektir. <br>
+  <hr>
+  <h1>Angular Routing III (Guard)</h1>
+
   <a routerLinkActive="active" routerLink="home">Home</a> | 
   <a routerLinkActive="active" routerLink="goto-about/okkk/about">About</a> | 
   <a routerLinkActive="active" routerLink="contact">Contact</a> |
   <a routerLinkActive="active" routerLink="products">Products</a> |
-  <a routerLinkActive="active" routerLink="customers">Customers</a>
+  <a routerLinkActive="active" routerLink="customers">Customers</a> |
+   <a routerLink="employees" [queryParams]="{page:1,size:size}">Employees</a>
    
   <br>
   
@@ -25,4 +32,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'DemoApp7';
+  size:number=10;
+  
 }

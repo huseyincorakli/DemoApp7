@@ -13,6 +13,7 @@ import { CustomersComponent } from './pages/customers/customers.component';
 import { CustomerDetailComponent } from './pages/customer-detail/customer-detail.component';
 import { CustomerOrdersComponent } from './pages/customer-orders/customer-orders.component';
 import { CustomerCommentsComponent } from './pages/customer-comments/customer-comments.component';
+import { EmployeesComponent } from './pages/employees/employees.component';
 // import {routes} from './routes/routes'
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { CustomerCommentsComponent } from './pages/customer-comments/customer-co
     CustomerDetailComponent,
     CustomerOrdersComponent,
     CustomerCommentsComponent,
+    EmployeesComponent,
   ],
   imports: [
     BrowserModule,

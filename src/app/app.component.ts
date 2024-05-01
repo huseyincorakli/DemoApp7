@@ -4,9 +4,21 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template:`
   <h1>Angular Routing I</h1>
+  <p>Angular da route yapılanması app-routing.modulde gerçekleştirilir. (Ayrı bir dosyada tutmak için forRoot ve RouteModule çağrılmalı)</p> 
+  <p ngNonBindable> <code>{{'{ path: ''home'', component: HomeComponent }'}}</code> </p>
+  <p>Her bir routea ait link oluşturulurken <code>routerLink</code> directivinden yararlanılır.</p>
+  <p>O routea ait active class vermek için <code>routerLinkActive</code> directive kullanılır</p> 
+  <p>Her bir route, routes dizisinde yukarıdaki gibi tanımlanır. </p>
+  <p>Route parametrelerini okumak için ActivatedRoute nesnesini inject ederek elde edebiliriz</p>
+  <hr>
   <a routerLinkActive="active" routerLink="home">Home</a> | 
   <a routerLinkActive="active" routerLink="goto-about/okkk/about">About</a> | 
-  <a routerLinkActive="active" routerLink="contact">Contact</a> <br>
+  <a routerLinkActive="active" routerLink="contact">Contact</a> |
+  <a routerLinkActive="active" routerLink="products">Products</a> |
+  <a routerLinkActive="active" routerLink="customers">Customers</a>
+   
+  <br>
+  
   <router-outlet></router-outlet>
   `,
   styles:[".active{color:red;}"]

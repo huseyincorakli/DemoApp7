@@ -14,6 +14,10 @@ import { CustomerDetailComponent } from './pages/customer-detail/customer-detail
 import { CustomerOrdersComponent } from './pages/customer-orders/customer-orders.component';
 import { CustomerCommentsComponent } from './pages/customer-comments/customer-comments.component';
 import { EmployeesComponent } from './pages/employees/employees.component';
+import {HttpClientModule} from '@angular/common/http';
+import { PostsComponent } from './pages/posts/posts.component';
+import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
+import { ProfileComponent } from './pages/profile/profile.component'
 // import {routes} from './routes/routes'
 @NgModule({
   declarations: [
@@ -28,10 +32,14 @@ import { EmployeesComponent } from './pages/employees/employees.component';
     CustomerOrdersComponent,
     CustomerCommentsComponent,
     EmployeesComponent,
+    PostsComponent,
+    UnauthorizedComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
     // RouterModule,
     // RouterModule.forRoot(routes)
   ],

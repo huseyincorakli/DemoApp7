@@ -16,12 +16,20 @@ import { Component } from '@angular/core';
   queryler yerleştirelecektir, merge de ise her iki routedaki queryler birleştirilecektir. <br>
   <hr>
   <h1>Angular Routing III (Guard)</h1>
+  <p>Guardların çalışma sırası şöyledir: CanMatch - CanActive - CanActiveChild - Resolve - CanDeactivate </p>
+  <h3>CanActive : ilgili pathe erişim izni kontrol edilir </h3>
+  <h3>CanActiveChild : ilgili pathe erişim izni varsa childına erişim izninin olup olmadığı kontrol edilir </h3>
+  <h3>Resolve: Yüklenecek olan componentin içeriğinin yüklenmesini beklemek için kullanılır </h3>
+  <h3>CanDeactivate : ilgili pathden kontrollü şekilde çıkılmasını kontrol eder </h3>
+  <h3>CanMatch : ilgili pathe erişim izinlerinin kontrol edilerek kontrol sonucunda hangi componentin yükleneceğinin karar verilmesinde kullanılır </h3>
 
   <a routerLinkActive="active" routerLink="home">Home</a> | 
   <a routerLinkActive="active" routerLink="goto-about/okkk/about">About</a> | 
   <a routerLinkActive="active" routerLink="contact">Contact</a> |
   <a routerLinkActive="active" routerLink="products">Products</a> |
+  <a routerLinkActive="active" routerLink="posts">Posts</a> |
   <a routerLinkActive="active" routerLink="customers">Customers</a> |
+  <a routerLinkActive="active" routerLink="profile">Profile</a> |
    <a routerLink="employees" [queryParams]="{page:1,size:size}">Employees</a>
    
   <br>

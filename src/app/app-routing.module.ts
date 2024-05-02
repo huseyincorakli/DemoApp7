@@ -10,6 +10,10 @@ import { CustomerDetailComponent } from './pages/customer-detail/customer-detail
 import { CustomerOrdersComponent } from './pages/customer-orders/customer-orders.component';
 import { CustomerCommentsComponent } from './pages/customer-comments/customer-comments.component';
 import { EmployeesComponent } from './pages/employees/employees.component';
+import { canActivateChildGuard, canActivateGuard, canDeactivateGuard, loggedSuccesfull, resolveGuard } from './guards/guards';
+import { PostsComponent } from './pages/posts/posts.component';
+import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'home',pathMatch:'full'},
@@ -19,8 +23,10 @@ const routes: Routes = [
   { path: 'products', component: ProductsComponent },
   { path: 'products/:id', component: ProductsComponent },
   {path:'customers', component:CustomersComponent,
+  canActivate:[canActivateGuard],
     children:[
       {path:'customer-detail/:id',component:CustomerDetailComponent ,
+      canActivateChild:[canActivateChildGuard],
         children: [
           {path:'',redirectTo:'customer-orders',pathMatch:'full'},
           {path:'customer-orders',component:CustomerOrdersComponent},
@@ -29,7 +35,10 @@ const routes: Routes = [
       }
     ]
   },
-  {path:'employees',component:EmployeesComponent},
+  {path:'employees',component:EmployeesComponent, canDeactivate:[canDeactivateGuard]},
+  {path:'posts',component:PostsComponent,resolve:{posts:resolveGuard}},
+  {path:'profile',component:ProfileComponent,canMatch:[loggedSuccesfull]},
+  {path:'profile',component:UnauthorizedComponent},
   { path: '**', component: NotfoundComponent },
 ];
 

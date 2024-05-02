@@ -14,6 +14,7 @@ import { canActivateChildGuard, canActivateGuard, canDeactivateGuard, loggedSucc
 import { PostsComponent } from './pages/posts/posts.component';
 import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { CalculateComponent } from './pages/calculate/calculate.component';
 
 const routes: Routes = [
   { path: '', redirectTo:'home',pathMatch:'full'},
@@ -39,6 +40,7 @@ const routes: Routes = [
   {path:'posts',component:PostsComponent,resolve:{posts:resolveGuard}},
   {path:'profile',component:ProfileComponent,canMatch:[loggedSuccesfull]},
   {path:'profile',component:UnauthorizedComponent},
+  {path:'calculate',component:CalculateComponent,data:{staticValue1:"value1",staciValue2:"value2"}},
   { path: '**', component: NotfoundComponent },
 ];
 

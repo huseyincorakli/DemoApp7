@@ -17,7 +17,8 @@ import { EmployeesComponent } from './pages/employees/employees.component';
 import {HttpClientModule} from '@angular/common/http';
 import { PostsComponent } from './pages/posts/posts.component';
 import { UnauthorizedComponent } from './pages/unauthorized/unauthorized.component';
-import { ProfileComponent } from './pages/profile/profile.component'
+import { ProfileComponent } from './pages/profile/profile.component';
+import { CalculateComponent } from './pages/calculate/calculate.component'
 // import {routes} from './routes/routes'
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ProfileComponent } from './pages/profile/profile.component'
     PostsComponent,
     UnauthorizedComponent,
     ProfileComponent,
+    CalculateComponent,
   ],
   imports: [
     BrowserModule,

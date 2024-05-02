@@ -22,7 +22,12 @@ import { Component } from '@angular/core';
   <h3>Resolve: Yüklenecek olan componentin içeriğinin yüklenmesini beklemek için kullanılır </h3>
   <h3>CanDeactivate : ilgili pathden kontrollü şekilde çıkılmasını kontrol eder </h3>
   <h3>CanMatch : ilgili pathe erişim izinlerinin kontrol edilerek kontrol sonucunda hangi componentin yükleneceğinin karar verilmesinde kullanılır </h3>
-
+  <hr>
+  <h1>Angular Routing IV (Route Data Passing)</h1>
+   Bu yöntem sayfalar arası daha temiz, güvenli ve okunaklı şekilde veri taşınmasına olanak sağlar. <br>
+   <hr>
+  <h1>Angular Router Events V</h1>
+ <img src="./assets/events.png" alt="">
   <a routerLinkActive="active" routerLink="home">Home</a> | 
   <a routerLinkActive="active" routerLink="goto-about/okkk/about">About</a> | 
   <a routerLinkActive="active" routerLink="contact">Contact</a> |
@@ -30,6 +35,7 @@ import { Component } from '@angular/core';
   <a routerLinkActive="active" routerLink="posts">Posts</a> |
   <a routerLinkActive="active" routerLink="customers">Customers</a> |
   <a routerLinkActive="active" routerLink="profile">Profile</a> |
+  <a routerLinkActive="active" routerLink="calculate" [state]="{dinamicValue1,dinamicValue2}">Calculate</a> |
    <a routerLink="employees" [queryParams]="{page:1,size:size}">Employees</a>
    
   <br>
@@ -41,5 +47,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'DemoApp7';
   size:number=10;
+  dinamicValue1="dValue1";
+  dinamicValue2="dValue2";
   
 }
